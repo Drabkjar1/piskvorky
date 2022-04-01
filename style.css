@@ -7,8 +7,9 @@
 
 body {
   background-image: linear-gradient(#615dad, #ffc8da);
-  height: 100vh;
-  width: 100vw;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,16 +17,18 @@ body {
 }
 
 .summary {
-  color: white;
-  border-radius: 10% 10% 0 0;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  color: #ffffff;
   width: 25rem;
   background-color: #283e50;
+  border-radius: 10px 10px 0 0;
 }
 
 .uvodni {
   width: 100%;
   height: auto;
-  border-radius: 5px 5px 0 0;
+  border-radius: 10px 10px 0 0;
 }
 
 .container {
@@ -41,7 +44,8 @@ h1 {
   margin: 1.5rem 0;
 }
 
-.description {
+.description,
+.rules {
   font-weight: 100;
   font-size: 1.2rem;
   width: 100%;
@@ -78,4 +82,66 @@ a {
 .zacit:hover {
   background-color: #0090e9;
   cursor: pointer;
+}
+.entry:hover {
+  background-color: #1cbb96;
+  cursor: pointer;
+}
+
+.entry {
+  border: none;
+  margin-bottom: 0.5px;
+  background-color: #1fcca4;
+  padding: 1rem 4rem;
+  width: 100%;
+}
+
+.rules {
+  text-align: left;
+  padding: 25px 35px 0 35px;
+  line-height: 1.5em;
+}
+
+.rules li {
+  padding-bottom: 15px;
+}
+
+ol {
+  margin: 0;
+}
+
+li img {
+  height: 1em;
+  width: 1em;
+  filter: invert(100%);
+}
+
+figure {
+  margin-bottom: 30px;
+}
+
+figcaption {
+  font-style: italic;
+  line-height: normal;
+  padding-top: 5px;
+}
+
+figure img {
+  max-width: 100%;
+}
+
+@media (min-width: 760px) {
+  .summary {
+    width: 40%;
+  }
+
+  .instruction {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  figure {
+    margin: 20px;
+    flex: 0 0 calc((50% - 40px));
+  }
 }
