@@ -8,6 +8,7 @@
 body {
   background-image: linear-gradient(#615dad, #ffc8da);
   background-repeat: no-repeat;
+  background-size: cover;
   height: 100%;
   width: 100%;
   display: flex;
@@ -42,6 +43,7 @@ h1 {
   font-size: 2.5rem;
   font-weight: 900;
   margin: 1.5rem 0;
+  color: #ffffff;
 }
 
 .description,
@@ -130,7 +132,7 @@ figure img {
   max-width: 100%;
 }
 
-@media (min-width: 760px) {
+@media (min-width: 800px) {
   .summary {
     width: 40%;
   }
@@ -144,4 +146,99 @@ figure img {
     margin: 20px;
     flex: 0 0 calc((50% - 40px));
   }
+}
+
+.hra {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  max-width: 80vmin;
+}
+
+.hra_nav {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0.5em;
+  align-items: center;
+}
+.hra_hrac {
+  display: flex;
+  align-items: center;
+}
+.hra_hrac-natahu {
+  font-weight: 800;
+  font-size: 1.2em;
+  margin-left: 0.1em;
+}
+
+.hra_ikona {
+  width: 1.2rem;
+  height: 1.2rem;
+  filter: invert(100%);
+  margin-left: 0.8rem;
+  margin-bottom: 0.1rem;
+}
+
+.hra_buttons {
+  display: flex;
+  align-items: center;
+}
+
+.hra_domu-btn {
+  height: 2.5rem;
+  width: 2.5rem;
+  aspect-ratio: 1/1;
+  background-color: #1fcca4;
+  color: #ffffff;
+  padding: 0.7em;
+  margin-right: 0.5em;
+  border-radius: 10%;
+}
+
+.hra_domu-btn:hover {
+  background-color: #1cbb96;
+  cursor: pointer;
+}
+
+.hra_restart-btn {
+  height: 2.5rem;
+  width: 2.5rem;
+  aspect-ratio: 1/1;
+  background-color: #0197f6;
+  color: #ffffff;
+  padding: 0.7em;
+  border-radius: 10%;
+}
+.hra_restart-btn:hover {
+  background-color: #0090e9;
+  cursor: pointer;
+}
+
+.hra_domu-img,
+.hra_restart-img {
+  height: 1.2rem;
+  width: 1.2rem;
+}
+
+.hra_pole {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.pole_btn {
+  width: calc(100% / 10);
+  border: 1px solid black;
+  aspect-ratio: 1/1;
+  background-color: white;
+  opacity: 0.4;
+}
+.pole_btn:hover,
+.pole_btn:focus {
+  cursor: pointer;
+  background-color: white;
+  opacity: 0.5;
 }
