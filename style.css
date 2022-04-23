@@ -8,7 +8,7 @@
 body {
   background-image: linear-gradient(#615dad, #ffc8da);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-attachment: fixed;
   height: 100%;
   width: 100%;
   display: flex;
@@ -160,6 +160,7 @@ figure img {
 
 .hra_nav {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding-bottom: 0.5em;
   align-items: center;
@@ -241,4 +242,49 @@ figure img {
   cursor: pointer;
   background-color: white;
   opacity: 0.5;
+}
+
+.game__area--circle {
+  background-image: url(img/circle.svg);
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation-name: gradual-growth;
+  animation-duration: 0.15s;
+}
+
+.game__area--cross {
+  background-image: url(img/cross.svg);
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation-name: gradual-growth;
+  animation-duration: 0.15s;
+}
+
+@keyframes gradual-growth {
+  0% {
+    background-size: 0%;
+  }
+  100% {
+    background-size: 65%;
+  }
+}
+
+.board__field--circle,
+.board__field--circle:hover,
+.board__field--circle:focus {
+  background-image: url(img/circle.svg);
+  background-repeat: no-repeat;
+  background-size: 2rem;
+  background-position: center;
+}
+
+.board__field--cross,
+.board__field--cross:hover,
+.board__field--cross:focus {
+  background-image: url(img/cross.svg);
+  background-repeat: no-repeat;
+  background-size: 2rem;
+  background-position: center;
 }
