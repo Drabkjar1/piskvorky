@@ -22,3 +22,90 @@ for (let i = 0; i < buttons.length; i++) {
     }
   });
 }
+
+// 5. uloha
+const boardSize = 10;
+
+const getPosition = (field) => {
+  for (let i = 0; i < buttons.length; i++) {
+    if (field === buttons[i]) {
+      return {
+        row: Math.floor(i / boardSize),
+        column: i % boardSize,
+      };
+    }
+  }
+};
+
+const getField = (row, column) => buttons[row * boardSize + column];
+
+const getSymbol = (field) => {
+  if (field.classList.contains('board__field--cross')) {
+    return 'cross';
+  } else if (field.classList.contains('board__field--circle')) {
+    return 'circle';
+  }
+};
+
+const isWinningMove = (field) => {
+  const origin = getPosition(field);
+  const symbol = getSymbol(field);
+
+  let i;
+
+  let inRow = 1;
+  // Doleva
+  i = origin.column;
+  while (i > 0 && symbol === getSymbol(getField(origin.row, i - 1))) {
+    inRow++;
+    i--;
+  }
+
+  // Doprava
+  i = origin.column;
+  while (
+    i < boardSize - 1 &&
+    symbol === getSymbol(getField(origin.row, i + 1))
+  ) {
+    inRow++;
+    i++;
+  }
+
+  if (inRow >= 5) {
+    return true;
+  }
+
+  let inColumn = 1;
+  // Nahoru
+  i = origin.row;
+  while (i > 0 && symbol === getSymbol(getField(i - 1, origin.column))) {
+    inColumn++;
+    i--;
+  }
+
+  // Dolu
+  i = origin.row;
+  while (
+    i < boardSize - 1 &&
+    symbol === getSymbol(getField(i + 1, origin.column))
+  ) {
+    inColumn++;
+    i++;
+  }
+
+  if (inColumn >= 5) {
+    return true;
+  }
+
+  return false;
+};
+
+const vyhra = (field) => {
+  if (isWinningMove(field) === true) {
+    if (getSymbol(field) === 'circle') {
+      alert('Kolečko vyhrává');
+    } else if (getSymbol(field) === 'cross') {
+      alert('Křížek vyhrává');
+    }
+  }
+};
